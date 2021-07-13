@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
+import { FlatList } from "react-native";
 
 export const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
@@ -34,3 +35,7 @@ export const RestaurantCard = styled(Card)`
 export const RestaurantCardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[2]};
 `;
+
+export const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: { padding: 16 },
+})``;

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FlatList, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { RestaurantInfoCard } from "../components/restaurant-info.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import styled from "styled-components/native";
@@ -8,10 +8,7 @@ import { LoadingIndicator } from "../../../components/utility/loading-indicator"
 import { Search } from "../components/search.component";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
-
-const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: { padding: 16 },
-})``;
+import { RestaurantList } from "../components/restaurant-info-styles";
 
 export const RestaurantsScreen = ({ navigation, showDetail }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
@@ -46,7 +43,6 @@ export const RestaurantsScreen = ({ navigation, showDetail }) => {
         )}
         keyExtractor={(item) => item.placeId}
       />
-      {/* <RestaurantInfoCard restaurant={restaurants} /> */}
     </SafeArea>
   );
 };
