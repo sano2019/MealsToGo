@@ -19,7 +19,7 @@ export const AccountBackground = styled.ImageBackground.attrs({
 `;
 
 export const AccountContainer = styled.View`
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: ${(props) => props.theme.space[4]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
@@ -44,6 +44,7 @@ export const ErrorContainer = styled.View`
 
 export const Title = styled(Text)`
   font-size: 30px;
+  color: ${(props) => props.theme.colors.ui.tertiary};
 `;
 
 export const AnimationWrapper = styled.View`
