@@ -4,6 +4,7 @@ import { mocks, mockImages } from "./mock";
 export const restaurantRequest = (location) => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
+    // console.log(mock);
     if (!mock) {
       reject("not found");
     }
@@ -14,7 +15,7 @@ export const restaurantRequest = (location) => {
 export const restaurantTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
-      return mockImages[Math.ceil(Math.random() * mockImages.length)];
+      return mockImages[Math.floor(Math.random() * mockImages.length)];
     });
     return {
       ...restaurant,
